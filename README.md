@@ -35,21 +35,52 @@ The PH² dataset contains:
 1. Clone this repository:
    ```bash
    git clone https://github.com/Amirtrs/PH2-Lesion-Feature-Extraction.git
-Open MATLAB and navigate to the cloned folder.
-Run the main script to execute the feature extraction and classification.
-Usage
-Ensure that the image and label directories are correctly set in the code.
-Run the script in MATLAB to:
-Extract features from the skin lesion images.
-Save the features and labels in features.mat and labels.mat.
-Train a neural network and calculate its performance on the dataset.
-Code Explanation
-Image Preprocessing: Converts images to grayscale and masks the lesion area.
-Feature Extraction:
-Wavelet Decomposition: Extracts mean and standard deviation for horizontal, vertical, and diagonal components.
-GLCM and Texture Features: Calculates texture properties for masked lesion regions.
-Geometric and Color Features: Calculates asymmetry, border complexity, color variance, lesion diameter, area, perimeter, eccentricity, and circularity.
-Classification:
-A neural network with 20 hidden neurons is trained to classify the lesions based on extracted features.
-The dataset is split into training (80%), validation (10%), and testing (10%).
-Class Mean Calculation: Calculates and displays mean feature values for each class.
+
+
+   
+## Getting Started
+
+1. Open MATLAB and navigate to the cloned folder.
+2. Run the main script to execute the feature extraction and classification.
+
+## Usage
+
+1. Ensure that the image and label directories are correctly set in the code.
+2. Run the script in MATLAB to:
+   - Extract features from the skin lesion images.
+   - Save the features and labels in `features.mat` and `labels.mat`.
+   - Train a neural network and calculate its performance on the dataset.
+
+## Code Explanation
+
+### Image Preprocessing
+- Converts dermoscopic images to grayscale.
+- Masks the lesion area using binary masks.
+
+### Feature Extraction
+1. **Wavelet Decomposition**:
+   - Extracts mean and standard deviation for horizontal (`H`), vertical (`V`), and diagonal (`D`) components.
+2. **GLCM and Texture Features**:
+   - Calculates texture properties for masked lesion regions, including:
+     - Contrast
+     - Correlation
+     - Energy
+     - Homogeneity
+3. **Geometric and Color Features**:
+   - Calculates the following features:
+     - **Asymmetry**: Difference between left and right halves of the lesion.
+     - **Border Complexity**: Based on the lesion perimeter.
+     - **Color Variance**: Standard deviation of pixel intensities.
+     - **Diameter**: Maximum distance within the lesion boundary.
+     - **Region Properties**: Area, Perimeter, Eccentricity, and Circularity.
+
+### Classification
+- A neural network with 20 hidden neurons is trained to classify lesions based on extracted features.
+- The dataset is divided as follows:
+  - **Training**: 80%
+  - **Validation**: 10%
+  - **Testing**: 10%
+
+### Class Mean Calculation
+- Computes and displays mean feature values for each class in the dataset.
+- Displays results in a tabular format for easy comparison.
