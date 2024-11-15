@@ -16,7 +16,7 @@ This project uses MATLAB to perform feature extraction and classification of ski
 
 The PH² dataset contains:
 1. **Images**: Original dermoscopic images and binary masks for segmented lesions.
-2. **Labels**: The `PH² Dataset.xlsx` or `PH² Dataset.txt` file contains the classifications and dermoscopic criteria for each image in the dataset.
+2. **Labels**: The `PH² Dataset.xlsx` file contains the classifications and dermoscopic criteria for each image in the dataset.
 
 ### Setting up the Dataset
 
@@ -34,7 +34,7 @@ The PH² dataset contains:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/Amirtrs/PH2-Lesion-Feature-Extraction.git
+   git clone https://github.com/Amirtrs/Skin-Lesion-Classification-PH2.git
 
 
    
